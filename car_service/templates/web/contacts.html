@@ -1,0 +1,85 @@
+{% extends 'web/base.html' %}
+
+{% block content %}
+    <sidebar class="contacts">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <i class="contact fas fa-address-book"></i>
+            </div>
+            <div class="flip-card-back">
+                <span>
+                    <h2>Email:</h2>
+                    <p>service_auto@gmail.com</p>
+                </span>
+
+                <span>
+                    <h2>Phone:</h2>
+                    <p>+ 359 888 888 888</p>
+                </span>
+                
+            </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <i class="contact fas fa-calendar-alt"></i>
+            </div>
+            <div class="flip-card-back">
+                <span>
+                    <h2>Work hour:</h2>
+                    <p>Monday - Friday</p>
+                    <p>09:00 - 18:00</p>
+                </span>
+            </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <i class="contact fas fa-map-marked-alt"></i>
+            </div>
+            <div class="flip-card-back">
+                <span>
+                    <h2>Address:</h2>
+                    <p>Гр. София, Ж.к Враждебна 3</p>
+                </span>
+            </div>
+            </div>
+        </div>
+    </sidebar>
+{% endblock %}
+
+{% block script %}
+    <script type="text/javascript">
+
+        const auth_content  = document.querySelector('.auth_system');
+        auth_content.style.display = 'none';
+
+        let childCount = 0
+        const flip = document.querySelectorAll(".flip-card-inner")
+
+        for (index = 0; index < flip.length; index++) {
+            const block = flip[index]
+                
+                block.addEventListener("touchstart", () => {
+                    if (block.style.cssText === 'transform: rotateY(-180deg);') {
+                        block.style.cssText = `
+                            unset
+                        `
+                    }
+                    else {
+                        block.style.cssText = `
+                            transform: rotateY(-180deg);
+                        `
+                    }
+                })
+            //}
+
+        }
+
+    </script>
+{% endblock  %}

@@ -1,0 +1,68 @@
+[
+  {
+    "model": "service_app.CarBrand",
+    "pk": 1,
+    "fields": {
+      "brand": "Audi", 
+      "image": "audi.png"
+    }
+  },
+  {
+    "model": "service_app.CarBrand",
+    "pk": 2,
+    "fields": {
+      "brand": "Bently", 
+      "image": "bently.png"
+    }
+  },
+  {
+    "model": "service_app.CarBrand",
+    "pk": 3,
+    "fields": {
+      "brand": "Bugatti", 
+      "image": "bugatti.png"
+    }
+  },
+  {
+    "model": "service_app.CarBrand",
+    "pk": 4,
+    "fields": {
+      "brand": "Lamborgini", 
+      "image": "lamborgini.png"
+    }
+  },
+  {
+    "model": "service_app.CarBrand",
+    "pk": 5,
+    "fields": {
+      "brand": "Porsche", 
+      "image": "porsche.png"
+    }
+  },
+  {
+    "model": "service_app.CarBrand",
+    "pk": 6,
+    "fields": {
+      "brand": "Seat", 
+      "image": "seat.png"
+    }
+  },
+  {
+    "model": "service_app.CarBrand",
+    "pk": 7,
+    "fields": {
+      "brand": "Skoda", 
+      "image": "skoda.png"
+    }
+  },
+  {
+    "model": "service_app.CarBrand",
+    "pk": 8,
+    "fields": {
+      "brand": "VW", 
+      "image": "vw.png"
+    }
+  }
+  
+
+]

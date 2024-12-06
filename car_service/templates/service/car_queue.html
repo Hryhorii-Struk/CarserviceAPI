@@ -1,0 +1,67 @@
+{% extends 'service/base.html' %}
+
+{% block main %}
+    <h1>Car Queue</h1>
+    <section class="container-table">
+        <form id="form" method='POST' action="{% url 'car queue' %}">
+            {% csrf_token %}
+            <table class="cars">
+                <tr>
+                    <th>Model</th>
+                    <th>Registration Number</th>
+                    <th>Status</th>
+                    <th>Assigne</th>
+                </tr>
+                {% for car in queue %}
+                    <tr id="{{ car.pk }}">
+                        <td>{{ car.car_id.model }}</td>
+                        <td>{{ car.car_id.registration_number }}</td>
+                        <td>
+                            <select id='choice' class="choice__filed">
+                                {% for choice in car.get_choices %}
+                                    {% if choice != car.status %}
+                                        <option value="{{ choice }}">{{ choice }}</option>
+                                    {% else %}
+                                        <option value="{{ choice }}" selected>{{ choice }}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                        </td>
+                        <td>{{ car.mechanic_id }}</td>
+                    </tr>
+                    
+                {% endfor %}
+            </table>
+            <input type="hidden" value="" name="submitter"  id="submitter"></input>
+        </form>
+        <section class="pages">
+            {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}&search={{ search }}"><i class="fas fa-step-backward"></i></a>
+            {% else %}
+                <a><i class="fas fa-step-backward"></i></a>
+            {% endif %}
+
+            {{ page_obj.number }} / {{ paginator.num_pages }}
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}&search={{ search }}"><i class="fas fa-step-forward"></i></a>
+            {% else %}
+                <a><i class="fas fa-step-forward"></i></a>
+            {% endif %}
+        </section>
+    </section>
+{% endblock  %}
+
+{% block script %}
+<script>
+    window.onload = () => {
+        var mySelect = document.getElementById('choice');
+        mySelect.onchange = (event) => {
+            var pk = event.target.parentNode.parentNode;
+            subbmiter = document.getElementById('submitter');
+            subbmiter.value = [pk.id, event.target.value]
+            document.getElementById("form").submit(); 
+        } 
+    }
+</script>
+{% endblock  %}

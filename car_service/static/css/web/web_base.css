@@ -1,0 +1,1348 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+
+body {
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 50px 0px;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+body {
+    background-color: #ebebeb;
+    display: grid;
+    grid-template-rows: 445px;
+
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 55px 0pc 0px 0px;
+}
+
+.header__logo {
+    padding-right: 300px;
+    clip-path: polygon(0px 0px, 88% 0px, 71.67% 100.00%, 0% 100%);
+    /* z-index: 95; */
+    background: #e3e3e3;
+    margin-left: -25px;
+    padding-left: 80px;
+    padding-bottom: 19px;
+    padding-top: 19px;
+
+}
+
+.header__logo > a > img {
+    width: 280px;
+    height: 124px;
+    cursor: pointer;    
+}
+
+.auth_background {
+    position: fixed;
+    z-index: -100;
+    width: 100%;
+    height: 100%;
+}
+
+.navigation > ul{
+    padding-left: 10px;
+
+}
+
+.navigation__list {
+    font-size: 40px;
+    list-style: none;
+    margin-bottom: 60px;
+    display: block;
+    text-transform: uppercase
+
+}
+
+
+.navigation {
+    position: absolute;
+    top: 90px;
+    right: 23px;
+    width: 365px;
+}
+
+
+.navigation__links {
+    font-family: 'Acme', sans-serif;
+    text-decoration: none;
+    color: whitesmoke;
+    
+}
+
+.navigation__links:hover {
+    color: #31658d;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+.navigation__home {
+    margin-left: 50px;
+}
+
+.navigation__gallery {
+    margin-left: -50px;
+}
+
+.navigation__contacts {
+    margin-left: -120px;
+}
+
+.auth_system__menu {
+    display: flex;
+    list-style: none;
+}
+
+.auth_system__links:hover {
+    color: rgb(214, 71, 95);
+}
+
+
+
+/* Middle Navigation */
+
+
+.menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.middle-menu {
+    padding-right: 20px;
+}
+.middle-menu__list {
+    font-size: 40px;
+    display: block;
+    text-transform: uppercase;
+}
+
+.middle-menu__list a {
+    color: #31658d;
+}
+
+.middle-menu__list a:hover {
+    color: #124770;
+}
+
+.main__content {
+    margin: 15px 0px 0px 0px;
+
+    border-top: 2px solid whitesmoke;
+    top: 10px;
+    padding-top: -10px;
+    margin-top: -285px;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 400px;
+
+}
+
+.hero > img {
+    position: absolute;
+    width: 100%;
+    height: 150%;
+    object-fit: cover;
+    z-index: 97;
+}
+
+.sidebar {
+    position: absolute;
+    z-index: 98;
+    right: 0px;
+    background: rgba(0, 0, 0, 0.5);
+    width: 800px;
+    height: 600px;
+    clip-path: polygon(50.07% -2px, 100% 0px, 100% 100%, 1.21% 99.49%);
+    
+}
+
+.footer {
+    position: relative;
+    top: 300px;
+    left: 0;
+    right: 0;
+    padding: 10px 20px;
+    width: 332px;
+    
+}
+
+
+
+/* Buttons */
+
+
+.btn {
+    font-size: 20px;
+    text-align: center;
+    display: inline-block;
+    padding: 15px 40px;
+    border: 1px solid #4d99e3;
+    border-radius: 20px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 20px;
+    text-decoration: none;
+    color: white;
+    background-color: #31658d;
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  height: 150px;
+  width: 50px;
+  background : #fff;
+  left: -55px;
+  top: -40px;
+  transform: rotate(37deg);
+  transition: all .5s;
+  opacity: 0.3;
+}
+
+.btn:hover:before {
+  left:95%;
+}
+
+
+.btn-submit {
+    margin: 10px 0px 10px 0px;
+    position: absolute;
+    left: 79%;
+    font-size: 20px;
+    text-align: center;
+    padding: 15px 40px;
+    border: 1px solid #4d99e3;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    background-color: #31658d;
+}
+
+.button-add {
+    display: inline-flex;
+    height: 40px;
+    width: 150px;
+    border: 2px solid #BFC0C0;
+    color: #000000;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: .8em;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+.icon {
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-size: 50px;
+    margin: 20px;
+    margin: 20px 170px;
+
+}
+
+#add-hover {
+    width: 15px;
+    height: 10px;
+    position: absolute;
+    transform: translateX(60px);
+    opacity: 0;
+    -webkit-transition: all .25s cubic-bezier(.14, .59, 1, 1.01);
+    transition: all .15s cubic-bezier(.14, .59, 1, 1.01);
+    margin: 0;
+    padding: 0 5px;
+  }
+  
+a#button-add:hover i {
+    width: 15px;
+    opacity: 1;
+    transform: translateX(50px);
+}
+
+/* Another pages */
+
+.pofile__data, 
+.content__car__detials, 
+.content__add__car,
+.car__hisotry,
+.garage__page,
+.car__timeline,
+.change__password,
+.gallery{
+    text-align: center;
+    border-radius: 5px;
+    padding: 0px 40px 20px 40px;
+    position: relative;
+    z-index: 99;
+    top: 60px;
+}
+
+
+form, .details{
+    position: relative;
+    width: 60%;
+    text-align: right;
+}
+
+.field, .brands-choide {
+    text-align: center;
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+.fas {
+    margin-right: 10px;
+}
+
+
+.pofile__data {
+   position: relative;
+}
+
+.profile-btn {
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+}
+
+.profile-btn .btn-submit {
+    position: unset;
+    font-size: 17px;
+}
+
+.car-delete-btn {
+    position: relative;
+    right: 60px;
+}
+
+.car-delete-btn a {
+    left: 91%;
+}
+
+.change-password {
+    left: 74.5%;
+}
+
+.blur{
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.blur > img {
+    position: absolute;
+    z-index: -10;
+    top: 160px;
+}
+
+
+
+.brands {
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+    bottom: 60px;
+    height: 140px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: none;
+    overflow: hidden;
+    background:rgba(255, 255, 255, 0.40);
+    
+}
+
+.items {
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px;
+    color: black;
+    animation: mymove 30s linear infinite ;
+    width: 3160px;
+    
+}
+.github_url {
+    text-decoration: none;
+    color: #000;
+}
+.fa-github {
+    padding-left: 5px;
+    cursor: pointer;
+}
+@keyframes mymove {
+    from   {right:  -1900px;}    
+    to  {right:  1900px;}    
+}
+
+.brands__logo {
+    width: 160px;
+    height: 120px;
+}
+
+/* Gallery */
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.content_gallery {
+    transition: 0.3s;
+    width: 25%;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.gallery_pictures {
+    width: 100%;
+    height: 450px;
+    border-bottom: 1px solid black;
+    border-radius: 20px;
+}
+/* Contacts page */
+
+.contacts{
+    position: absolute;
+    z-index: 98;
+    /* top: 46px; */
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+    z-index: 98;
+    color: bisque;
+    position: relative;
+    top: 120px;
+}
+
+.contact {
+    font-size: 200px;
+    padding: 50px;
+    
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+@media screen and (min-width: 1200px) {
+    .flip-card:hover .flip-card-inner{
+        transform: rotateY(-180deg);
+    }
+}
+
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+
+
+}
+
+.flip-card-front {
+    color: rgb(187, 190, 192);
+    background-color: rgba(49, 101, 141, 0.7);
+
+}
+
+.flip-card-back {
+    background-color: rgba(49, 101, 141, 0.9);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+
+
+/* Garage Page */
+
+.title__content__title {
+    margin-top: 0px;
+    font-size: 50px;
+}
+
+
+.garage__page__cars {
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 5px auto;
+    width: 50%;
+    gap: 15px;
+    padding: 20px;
+}
+
+
+.card{
+    position: relative;
+    width: 280px;
+    height: 350px;
+    padding: 55px;
+    margin-top: 30px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
+    border-radius: 4px;
+    transition: transform 0.4s;
+    transform-style: preserve-3d;
+}
+
+.card-front, .card-back{
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;  
+}
+
+.card-back {
+    display: none;
+}
+
+.img-fluid {
+    width: 180px;
+    height: 140px;
+}
+
+.card-image-overlay span {
+    display: inline-block;              
+    font-size: 12px;
+}
+
+
+
+.card-notify-repair {
+    position: absolute;
+    top: -8px;
+    right: -2px;
+    font-size: 20px;
+    color: red;
+    cursor: pointer;
+    margin-right: 0px;
+}
+
+.edit-btn, .delete-btn{
+    width: 80px;
+    height: 40px;
+    border-radius: 15px;
+    font-size: 15px;
+    line-height: 35px;
+    text-align: center;
+    border: 3px solid #31658d;
+    display: inline-block;
+    text-decoration: none;
+    margin: 15px auto 1px auto;
+    color: #000;
+    overflow: hidden;        
+    position: relative;
+    background-color: #31658d;
+}
+
+.delete-btn {
+    border: 3px solid #da3a3a;
+    background-color: #ee3945;
+}
+
+.edit-btn:hover, .delete-btn:hover{
+    background-color: #e6de08;
+    color: #1e1717;
+    border: 2px solid #4e4f4f;
+    background: transparent;
+    transition: all 0.3s ease;
+    box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
+}
+.delete-btn:hover {
+    border: 2px solid #e60808;
+
+}
+
+.ad-title h5 {
+    margin-bottom: 10px;
+}
+
+
+
+/* Car Repair Process */
+
+.md-stepper-horizontal {
+	display:table;
+	width:100%;
+	margin:0 auto;
+	background-color:rgba(255,255,255, 0.4);
+	box-shadow: 0 3px 8px -6px rgba(0,0,0,.50);
+    position: relative;
+    top: 200px;
+}
+.md-stepper-horizontal .md-step {
+	display:table-cell;
+	position:relative;
+	padding:24px;
+}
+.md-stepper-horizontal .md-step:hover,
+.md-stepper-horizontal .md-step:active {
+	background-color:rgba(0,0,0,0.04);
+}
+.md-stepper-horizontal .md-step:active {
+	border-radius: 15% / 75%;
+}
+.md-stepper-horizontal .md-step:first-child:active {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+.md-stepper-horizontal .md-step:last-child:active {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+.md-stepper-horizontal .md-step:hover .md-step-circle {
+	background-color:#757575;
+}
+.md-stepper-horizontal .md-step:first-child .md-step-bar-left,
+.md-stepper-horizontal .md-step:last-child .md-step-bar-right {
+	display:none;
+}
+.md-stepper-horizontal .md-step .md-step-circle {
+	width:30px;
+	height:30px;
+	margin:0 auto;
+	background-color:#999999;
+	border-radius: 50%;
+	text-align: center;
+	line-height:30px;
+	font-size: 16px;
+	font-weight: 600;
+	color:#FFFFFF;
+}
+.md-stepper-horizontal.green .md-step.active .md-step-circle {
+	background-color:#00AE4D;
+}
+.md-stepper-horizontal.orange .md-step.active .md-step-circle {
+	background-color:#F96302;
+}
+.md-stepper-horizontal .md-step.active .md-step-circle {
+	background-color: rgb(33,150,243);
+}
+
+.md-stepper-horizontal .md-step .md-step-title {
+	margin-top:16px;
+	font-size:16px;
+	font-weight:600;
+}
+.md-stepper-horizontal .md-step .md-step-title,
+.md-stepper-horizontal .md-step .md-step-optional {
+	text-align: center;
+	color:rgba(0,0,0,.26);
+}
+.md-stepper-horizontal .md-step.active .md-step-title {
+	font-weight: 600;
+	color:rgba(0,0,0,.87);
+}
+
+.md-stepper-horizontal .md-step .md-step-optional {
+	font-size:12px;
+}
+.md-stepper-horizontal .md-step.active .md-step-optional {
+	color:rgba(0,0,0,.54);
+}
+.md-stepper-horizontal .md-step .md-step-bar-left,
+.md-stepper-horizontal .md-step .md-step-bar-right {
+	position:absolute;
+	top:36px;
+	height:1px;
+    border-top: 4px solid #31658D;
+	
+}
+
+.active-bar {
+    border-top: 4px solid #31658D;
+    background-size: 600% 600%;
+    animation: blink2 .5s step-end infinite alternate;
+
+}
+
+
+@keyframes blink2 {
+    50% {
+      border-color: #F96302;
+    }
+  }
+
+.md-stepper-horizontal .md-step .md-step-bar-right {
+	right:0;
+	left:50%;
+	margin-left:20px;
+}
+.md-stepper-horizontal .md-step .md-step-bar-left {
+	left:0;
+	right:50%;
+	margin-right:20px;
+}
+
+.fa-check {
+    margin-right: 0px;
+}
+
+
+
+/* Car History Page */
+
+
+
+.container {
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translate(-50%, -0%);
+}
+
+
+.btn__action {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 6px 8px;
+    margin: 2px;
+    cursor: pointer;
+}
+.btn__action:hover {
+    background-color: #31658d;
+}
+
+/* History PopUp window */
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    display: none;
+    z-index: 99;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 65%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    height: 95%;
+}
+  
+.popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+.popup .close:hover {
+    color: #06D85F;
+}
+.popup .content {
+    max-height: 70%;
+    /* overflow: auto; */
+}
+
+.close {
+    cursor: pointer;
+}
+
+
+
+/* Invoice  */
+
+
+
+.invoice {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 40px;
+}
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+#logo {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+#logo img {
+    width: 90px;
+  }
+  
+.invoice__title {
+    border-top: 1px solid  #5D6975;
+    border-bottom: 1px solid  #5D6975;
+    color: #5D6975;
+    font-size: 25px;
+    line-height: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+  
+
+.invoice__table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 20px;
+  }
+  
+.invoice__table tr:nth-child(2n-1) td {
+    background: #F5F5F5;
+  }
+  
+  
+.invoice__table th {
+    padding: 5px 20px;
+    color: #5D6975;
+    border-bottom: 1px solid #C1CED9;
+    white-space: nowrap;        
+    font-weight: normal;
+  }
+
+.table_body {
+    height: 70px;
+}
+.td__center {
+    text-align: center;
+}
+.td__right {
+    text-align: right;
+}
+
+.table_footer {
+    height: 100px;
+}
+.invoice__total {
+   border-top: 2px solid black;
+}
+
+.errorlist{
+    color: red;
+    padding-right: 23px;
+    text-align: right;
+    list-style: none;
+}
+.errorlist p {
+    margin: 0;
+}
+
+
+
+/* Responsive Design */
+
+
+@media screen and (max-width: 1368px){
+    .box{
+      width: 70%;
+    }
+    .popup{
+      width: 70%;
+    }
+    .sidebar {
+        right: -4px;
+    }
+
+    .brands {
+        top: 670px;
+        width: 100%;
+    }
+
+    .brands__logo {
+        width: 130px;
+        height: 90px;
+    }
+
+    .header__logo {
+        padding-left: 40px;
+        padding-right: 150px;
+        clip-path: polygon(0px 0px, 95% 0px, 61.67% 100.00%, 0% 100%)
+    }
+
+    .header__logo > a > img {
+        width: 175px;
+        
+    }
+
+    .card {
+        width: 263px;
+        height: 350px;
+    }
+
+    .flip-card {
+        width: 210px;
+        height: 218px;
+    }
+
+
+    .contact {
+        font-size: 142px;
+        padding: 28px;
+    }
+
+    .menu {
+        padding-left: 0px;
+        padding-right: 20px;
+    }
+
+    .middle-menu__list {
+        font-size: 42px;
+    }
+
+    .btn {
+        font-size: 15px;
+    }
+
+    
+    .pofile__data,
+    .content__car__detials, 
+    .content__add__car, 
+    .car__hisotry, .garage__page {
+        padding: 0px;
+    }
+
+    .auth_system__menu {
+        flex-direction: column;
+        padding-left: 0px;
+    }
+
+    .garage__page__cars {
+        width: 100%;
+    }
+
+    form, .details {
+        width: 75%;
+    }
+    .field, .brands-choide {
+        width: 50%;
+    }
+
+    .btn-submit {
+        left: 63%;
+    }
+
+
+    .popup {
+        height: 500px;
+    }
+
+    .content {
+        width: 50%;
+    }
+    .gallery_pictures {
+        height: 230px;
+    }
+
+    .hero {
+        overflow: hidden;
+        padding: unset;
+        height: 670px;
+    }
+
+    .hero > img {
+        object-fit: fill;
+        height: 100%;
+        width: 130%;
+    }
+
+    .footer {
+        top: 120px;
+        width: 598px;
+        text-align: right;
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 796px){
+    .header__logo {
+        padding-left: 22px;
+        padding-right: 72px;
+    }
+
+    .header__logo > a > img {
+      width: 118px;
+    }
+    .btn-submit {
+        left: 62%;
+      }
+
+    .content_gallery {
+        width: 60%;
+    }
+    .footer {
+        top: 100px;
+        text-align: right;
+        font-size: 15px;
+        width: 330px;
+    
+    }
+
+    .flip-card:active .flip-card-inner{
+        transform: rotateY(-180deg);
+    }
+    
+}
+
+@media screen and (max-width: 594px) {
+    .btn-submit {
+        left: 60%;
+    }
+
+}
+
+
+@media screen and (max-width: 584px) {
+    .btn-submit {
+        left: 58%;
+    }
+}
+
+
+@media screen and (max-width: 455px) {
+    .btn-submit {
+        left: 55%;
+      }
+    
+}
+ 
+@media screen and (max-width: 445px) {
+    body {
+        grid-template-rows: 580px;
+    }
+
+    .header {
+        flex-direction: column;
+        justify-content: center;
+        height: 240px;
+    }
+
+    .header__logo {
+        clip-path: unset;
+        padding: 0px;
+        background: unset;
+    }
+    .header__logo > a > img {
+        width: unset;
+        margin-left: 30px;
+    }
+
+    .menu {
+        padding: unset;
+        margin: 30px 0px;
+    }
+
+    .auth_system__menu {
+        flex-direction: row;
+        padding: unset;
+        margin-top: 30px;
+    }
+    .sidebar {
+        background: unset;
+    }
+    .topnav li{
+        display: none;
+    }
+    .sidebar .icon {
+        float: right;
+        display: block;
+    }
+    .topnav.responsive {position: relative;}
+    .sidebar.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive li {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+
+    .navigation {
+        width: unset;
+    }
+    .navigation__list a {
+        margin-left: unset;
+    }
+    .hero {
+        overflow: hidden;
+        padding: unset;
+        height: 570px;
+    }
+
+    .hero > img {
+        object-fit: fill;
+        height: 100%;
+        width: 152%;
+    }
+    .garage__page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+    .garage__page__cars {
+        flex-direction: column;
+    }
+    .form-control > label {
+        display: block;
+        text-align: center;
+    }
+
+    .car__timeline {
+        margin-top: 30px;
+        top: 0px;
+        padding: 0px;
+    }
+    .md-stepper-horizontal  {
+        top: 100px;
+    }
+    .btn-submit {
+        left: 52%;
+    }
+
+    .errorlist {
+        padding-right: 55px;
+    }
+    .contacts {
+        gap: 10px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: unset;
+    }
+    .card {
+        padding: 50px;
+    }
+    .flip-card {
+        height: 111px;
+    }
+
+    .contact {
+        font-size: 66px;
+        padding: 20px;
+    }
+
+    form, .details {
+        width: 100%;
+        text-align: unset;
+    }
+
+    .flip-card-back span h2 {
+        font-size: 15px;
+    }
+    .flip-card-back span p {
+        font-size: 10px;
+    }
+
+    .brands {
+        top: 800px;
+    }
+
+    .btn-submit {
+        left: 36%;
+    }
+
+    .field, .brands-choide {
+        width: 70%;
+    }
+
+    .title__content__title {
+        margin-top: -34px;
+        font-size: 30px;
+    }
+    .profile-btn {
+        padding: 25px;
+        flex-direction: column;
+    }
+
+    .images {
+        gap: 29px;
+        margin-bottom: 12px;
+    }
+    .field, .brands-choide {
+        margin: 4px;
+    }
+}
+
+
+
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.history__table th,
+.history__table td {
+  padding: .625em;
+  text-align: center;
+}
+
+.history__table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+} 
+
+.history__table {
+    border: 0;
+
+  }
+
+.history__table caption {
+    font-size: 1.3em;
+    margin: .5em 0 .75em;
+
+}
+
+.history__table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+.history__table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+}
+
+.history__table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+    padding: .625em;
+}
+
+.history__table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.history__table td:last-child {
+    border-bottom: 0;
+}
+
+@media screen and (max-width: 1350px) {
+    .container{
+        all: unset;
+    }
+
+    .car__hisotry {
+        margin: 10px;
+    }
+
+    .popup {
+        width: 100%;
+    }
+
+    .invoice {
+        padding: 17px 2px;
+        margin-top: 60px;
+    }
+    
+    .content{
+        width: 70%;
+    }
+
+    .gallery_pictures {
+        height: 200px;
+    }
+
+}  
+
+
+.card_action_btn {
+    display: flex;
+    gap: 8px;
+}

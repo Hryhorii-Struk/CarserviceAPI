@@ -1,0 +1,62 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+
+{% block menu %}
+{% endblock %}
+{% block content %}
+        <sidebar class="sidebar" id="sidebar">
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+            <nav class="navigation">
+                <ul class="topnav" id="myTopnav">
+                    <li class="navigation__list">
+                        <a href="{% url 'home page' %}" class="navigation__links navigation__home"><i class="fas fa-home"> Home</i></a>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <script type="text/javascript" src="{% static 'js/menu.js' %}"></script>
+                        {% if user.is_customer %}
+                            <li class="navigation__list">
+                                <a href="{% url 'garage' %}" class="navigation__links navigation__garage"><i class="fas fa-warehouse"> Garage</i></a>
+                            </li>
+                        {% elif user.is_staff or user.is_superuser %}
+                            <li class="navigation__list">
+                                <a href="{% url 'admin:index' %}" class="navigation__links navigation__admin_panel"><i class="fas fa-users-cog"> Admin Panel</i></a>
+                            </li>
+                        {% else %}
+                            <li class="navigation__list">
+                                <a href="{% url 'service home page' %}" class="navigation__links navigation__garage"><i class="fas fa-warehouse"> Service</i></a>
+                            </li>
+                        {% endif %}
+                    {% endif %}
+                    <li class="navigation__list">
+                        <a href="{% url 'gallery page' %}" class="navigation__links navigation__gallery"><i class="fas fa-images"> Gallery</i></a>
+                    </li>
+                    <li class="navigation__list">
+                        <a href="{% url 'contacts' %}" class="navigation__links navigation__contacts"><i class="fas fa-address-card"> Contacts</i></a>
+                    </li>
+                </ul>
+            </nav>
+        </sidebar>
+   
+  
+{% endblock %}
+
+  
+{% block script %}
+<script type="text/javascript">
+    function myFunction() {
+        const sidenav = document.getElementById("myTopnav");
+        const sidebar = document.getElementById("sidebar");
+        if (sidenav.className === "topnav") {
+          sidenav.className += " responsive";
+          sidebar.style.background = "rgba(0, 0, 0, 0.5)"
+        } else {
+          sidenav.className = "topnav";
+          sidebar.style.background = "unset"
+
+        }
+      }
+</script>
+{% endblock  %}

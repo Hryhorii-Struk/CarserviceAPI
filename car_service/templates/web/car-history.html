@@ -1,0 +1,191 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block content %}
+    {% block cover_car %}
+    {% endblock  %}
+    <section class="car__hisotry">
+        <h1 class='title__content__title'>Car Hisotry</h1>
+
+        {% if history %}
+        <div class="container">
+            <table class="history__table">
+                <thead>
+                  <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Invoice number</th>
+                    <th scope="col">Kilometers</th>
+                    <th scope="col">Total Price</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for row in history %}
+                    <tr>
+                        <td data-label="Date">{{ row.date }}</td>
+                        <td data-label="Invoice number">№ {{ row.number }}</td>
+                        <td data-label="Kilometers">{{ row.kilometers }} km</td>
+                        <td data-label="Total Price">{{ row.total_price }} лв.</td>
+                        <td data-label="Actions"><a class="btn__action" onClick='genereateInvoice("{% url "history" row.number %}");'>Invoice</a>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+        
+        </div>
+        {% endif %}
+        
+        <section class="pages">
+            {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}&search={{ search }}"><i class="fas fa-step-backward"></i></a>
+            {% else %}
+                <a><i class="fas fa-step-backward"></i></a>
+            {% endif %}
+
+            {{ page_obj.number }} / {{ paginator.num_pages }}
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}&search={{ search }}"><i class="fas fa-step-forward"></i></a>
+            {% else %}
+                <a><i class="fas fa-step-forward"></i></a>
+            {% endif %}
+        </section>
+    </section>
+
+    
+
+    <section id="popup1" class="overlay">
+        <div class="popup">
+            <a class="close" onClick="closePopUp();">&times;</a>
+            <div class="content">       
+            </div>
+        </div>
+    </section>
+
+{% endblock  %}
+
+{% block script %}
+<script>
+    const auth_content  = document.querySelector('.auth_system');
+    auth_content.style.display = 'none';
+
+
+    const getInvoice = (url) => 
+        fetch(url)
+        .then(data => data.json())
+
+
+    showInvoice = (invoice, url) => {
+        const id = url.split('/')[4];
+        const data =  invoice.history
+        const date = data.Date
+        const parts = data["Changed parts"]
+
+        
+        const contentBox = document.getElementsByClassName("content")[0]
+        const popup = document.getElementsByClassName("overlay")[0]
+        
+        contentBox.innerHTML = ""
+
+        totalPrice = 0
+        const invoiceSection = document.createElement("section")
+        invoiceSection.setAttribute("class", "invoice")
+        invoiceSection.innerHTML = `
+                <div class="invoice__header">
+                <div id="logo">
+                    <img class="invoice__header__logo" src="/static/images/logo.png" alt="company logo">
+                </div>
+                <h1 class="invoice__title" >INVOICE ${id}</h1>
+            </div>
+            <div class="invoice__summary">
+                <table class="invoice__table">
+                    <thead>
+                    <tr>
+                        <th>Part</th>
+                        <th></th>
+                        <th>QTY</th>
+                        <th>PRICE without VAT</th>
+                        <th>PRICE with VAT</th>
+                        <th>TOTAL</th>
+                    </tr>
+                    </thead>
+                    <tbody class="table_body">
+                    </tbody>
+                    <tfoot class="table_footer">
+                    </tfoot>
+                </table>
+            </div>
+        `
+        contentBox.appendChild(invoiceSection)
+        tableBody = document.getElementsByClassName("table_body")[0]
+        tableFooter = document.getElementsByClassName("table_footer")[0]
+
+        for (const part in parts) {
+            const partName = part;
+            const partPrice = parts[part].price;
+            const quantity = parts[part].qty;
+            const totalPartPrice = partPrice * quantity;
+            totalPrice +=  totalPartPrice    ;
+
+            var newRow = document.createElement("tr");
+            newRow.innerHTML = `
+                <td class="td__center">${partName}</td>
+                <td></td>
+                <td class="td__center">${quantity}</td>
+                <td class="td__center">${(partPrice - (partPrice * 0.25)).toFixed(2)} лв.</td>
+                <td class="td__center">${partPrice.toFixed(2)} лв.</td>
+                <td class="td__right">${totalPartPrice.toFixed(2)} лв.</td>
+            `;
+            tableBody.appendChild(newRow);
+
+                    
+        }
+        vat = (totalPrice * 0.25);
+        subTotal = (totalPrice - vat);
+
+        tableFooter.innerHTML = `
+            <tr class="td__right invoice__total">
+                <td colspan="5">SUBTOTAL</td>
+                <td class="subtotal">${subTotal.toFixed(2)} лв.</td>
+            </tr>
+            <tr class="td__right">
+                <td colspan="5">VAT 25%</td>
+                <td class="tax">${vat.toFixed(2)} лв.</td>
+            </tr>
+            <tr class="td__right">
+                <td colspan="5" class="grand total">GRAND TOTAL</td>
+                <td class="grand total">${totalPrice.toFixed(2)} лв.</td>
+            </tr>
+        `;
+
+        popup.style.cssText = `
+            display: block;
+        `;
+        
+    }
+
+
+    genereateInvoice = (url) => {
+        getInvoice(url).then(
+            data => {
+                showInvoice(data, url);
+            }
+
+        )
+    }
+
+
+    closePopUp = () => {
+        const popup = document.getElementsByClassName("overlay")[0]
+
+        popup.style.cssText = `
+            display: none;
+        `;
+    }
+
+</script>
+{% endblock  %}
+
+
+{% block brands %}
+{% endblock %}
