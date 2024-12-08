@@ -1,4 +1,4 @@
-# Car_Service_App
+.# Car_Service_App
 <h2 align="center">Introduction</h2>
 Car service app with internal application for mechanics and receivers and official site where customer may register, add their cars and follow the progress with their car repairing.
 
